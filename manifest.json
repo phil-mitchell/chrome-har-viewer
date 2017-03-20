@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+
+    "name": "Chrome HAR viewer",
+    "description": "View HAR files in Chrome",
+    "version": "1.0",
+
+    "icons": {
+    },
+
+    "web_accessible_resources": [
+        "assets/viewer.css"
+    ],
+    "omnibox": { "keyword": "har-viewer" },
+    "content_scripts": [ {
+        "matches": ["*://*/*.har", "file:///*.har"],
+        "css": [ "assets/google-icons.css", "assets/viewer.css" ],
+        "js": [ "assets/harParser.js",
+                "node_modules/handlebars/dist/handlebars.runtime.min.js",
+                "templates/pages.js",
+                "assets/viewer.js" ],
+        "run_at": "document_start" 
+    } ],
+    "permissions": [
+        "*://*/*.har",
+        "file:///*.har"
+    ]
+}

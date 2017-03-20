@@ -1,0 +1,15 @@
+{
+  "name": "chrome-har-viewer",
+  "version": "1.0.0",
+  "description": "View HAR files in Chrome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/handlebars/bin/handlebars templates/pages.handlebars -f templates/pages.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.6"
+  }
+}

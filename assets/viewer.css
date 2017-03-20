@@ -1,0 +1,241 @@
+body {
+    font-size: 14px;
+    color: #333;
+}
+
+table.entries {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 2px;
+}
+
+table.entries caption {
+    text-align: left;
+    font-size: 20px;
+    color: #999;
+    background-color: #eee;
+}
+
+table.entries caption:hover {
+    background-color: #ffff0a;
+}
+
+table.entries thead tr th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    padding: 5px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+}
+
+table.entries tfoot tr th {
+    font-size: 12px;
+    text-align: left;
+}
+
+table.entries tfoot tr th.text-right {
+    text-align: right;
+}
+
+table.entries tr:hover {
+    background-color: #f5f5f5;
+}
+
+table.entries td {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    padding: 0;
+    line-height: 1.5;
+}
+
+table.entries td.url {
+    width: 30%!important;
+    max-width: 30%!imporant;
+}
+
+table.entries td.url i {
+    font-size: 16px;
+}
+
+table.entries td.url .order {
+    width: 28px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 3px;
+}
+
+table.entries td.url a {
+    display: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    z-index: 5;
+    left: inherit;
+    top: inherit;
+    padding: 3px 5px 3px 2px;
+}
+
+table.entries td.url:hover a {
+    display: inline-block;
+    color: #428bca;
+    font-weight: normal;
+    position: absolute;
+}
+
+table.entries td.url:hover strong {
+    display: none;
+}
+
+table.entries td.url strong em {
+    color: #888;
+}
+
+span.detail {
+    display: none;
+    color: lightgrey;
+}
+
+td.progress {
+    width: 50%;
+}
+
+td.progress div {
+    height: 10px;
+    display: inline-block;
+}
+
+.progress-start {
+    border-right: 1px solid black;
+}
+
+.progress-blocked {
+    background-color: lightgrey;
+}
+
+.progress-dns {
+    background-color: darkgrey;
+}
+
+.progress-connect {
+    background-color: pink;
+}
+
+.progress-send {
+    background-color: green;
+}
+
+.progress-wait {
+    background-color: red;
+}
+
+.progress-receive {
+    background-color: blue;
+    border-right: 1px solid black;
+}
+
+dl.dl-horizontal {
+    padding-left: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+dl.dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+dl.dl-horizontal dd {
+    margin-left: 180px;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 20px;
+}
+
+h3.headers-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-weight: 400;
+    color: 999;
+}
+
+div.entry-details-content {
+    background-color: #fff;
+    padding: 20px 10px 5px;
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+
+ul.entry-details-tabs {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-top: 0;
+}
+
+ul.entry-details-tabs:before {
+    content: " ";
+    display: table;
+}
+
+ul.entry-details-tabs:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+ul.entry-details-tabs li {
+    float: left;
+    margin-bottom: -1px;
+    position: relative;
+    display: block;
+}
+
+ul.entry-details-tabs li a {
+    margin-right: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: 0 0;
+    line-height: 1.5;
+    color: #428bca;
+}
+
+ul.entry-details-tabs li a:hover {
+    border-color: #eee #eee #ddd;
+    text-decoration: none;
+    background-color: #eee;
+}
+
+ul.entry-details-tabs li.active a {
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+
+
+
