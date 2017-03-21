@@ -28,7 +28,7 @@
           <div>
             <b class="order">{{{inc @index}}}.</b>
             <i id="expander-{{../pRef}}#{{@index}}" class="material-icons">expand_more</i>
-            <a href="{{fullUrl}}" target="_blank">{{fullUrl}}</a>
+            <a href="{{fullUrl}}" onClick="return false;">{{fullUrl}}</a>
             <strong>{{fileName}}<em>{{params}}</em></strong>
             <span class="detail">{{{trimPath path}}}</span>
           </div>
@@ -72,7 +72,7 @@
             <h3 class="headers-title">General</h3>
             <dl class="dl-horizontal">
               <dt>Request URL</dt>
-              <dd><a href="{{fullUrl}}">{{fullUrl}}</a></dd>
+              <dd><a href="{{fullUrl}}" target="_blank">{{fullUrl}}</a></dd>
               <dt>Request Method</dt>
               <dd>{{method}}</dd>
               <dt>Status Code</dt>
