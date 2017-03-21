@@ -498,15 +498,18 @@ harParser.convertProgress = function( progress, lastTime ) {
         r = {};
         p = progress[i];
         startedTime = p.startedDateTime - firstTime;
-        progressContent = '';
 
         for( j = 0; j < jlen; j++ ) {
             step = steps[j];
 
             if( p[step.step] >= 0 ) {
                 r[step.step + 'Width'] = harParser.pct( p[step.step], lastTime );
+                r[step.step + 'LocalWidth' ] = harParser.pct( p[step.step], p.total );
+                r[step.step + 'Time'] = harParser.timeFormatter( p[step.step] );
             } else {
                 r[step.step + 'Width'] = '0';
+                r[step.step + 'LocalWidth'] = '0';
+                r[step.step + 'Time'] = harParser.timeFormatter( 0 );
             }
         }
 
@@ -517,7 +520,6 @@ harParser.convertProgress = function( progress, lastTime ) {
             r.progressStart = '';
         }
 
-        r.progressContent = progressContent;
         r.startPosition = harParser.pct( startedTime, lastTime );
         r.totalTime = harParser.timeFormatter( p.total );
 
@@ -539,7 +541,9 @@ harParser.convertHar = function( entry, i ) {
                                     __response.bodySize, status.code ),
         mime = harParser.parseMime( __response.content && __response.content.mimeType || '',
                                     url.complete ),
-        responseContent = __response.content && __response.content.text || undefined;
+        responseContent = __response.content && __response.content.text || undefined,
+        requestCookies = __request.cookies || [],
+        responseCookies = __response.cookies || [];
 
     return{
         method: method,
@@ -557,7 +561,9 @@ harParser.convertHar = function( entry, i ) {
         sizeToShow: size.size,
         request: entry.request,
         response: entry.response,
-        fileContent: responseContent
+        fileContent: responseContent,
+        requestCookies: requestCookies,
+        responseCookies: responseCookies
     };
 
 };

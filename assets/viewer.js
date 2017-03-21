@@ -64,6 +64,41 @@ function toggleExpander( id ) {
         el.innerText = el.innerText === 'expand_more' ? 'expand_less' : 'expand_more';
     }
 }
+
+function selectTab( event, tab ) {
+    var li = event.currentTarget;
+    while( li.nodeName !== 'LI' ) {
+        li = li.parentElement;
+    }
+
+    var ul = li.parentElement;
+    while( ul.nodeName !== 'UL' ) {
+        ul = ul.parentElement;
+    }
+
+    var td = ul.parentElement;
+    while( td.nodeName !== 'TD' ) {
+        td = td.parentElement;
+    }
+
+    var tabcontent = td.getElementsByClassName( 'entry-details-content' );
+    for( let i = 0; i < tabcontent.length; ++i ) {
+        if( tabcontent[i].classList.contains( tab ) ) {
+            tabcontent[i].style.display = 'block';
+        } else {
+            tabcontent[i].style.display = 'none';
+        }
+    }
+
+    var tablinks = ul.getElementsByTagName( 'LI' );
+    for( let i = 0; i < tablinks.length; ++i ) {
+        if( tablinks[i] === li ) {
+            tablinks[i].classList.add( 'active' );
+        } else {
+            tablinks[i].classList.remove( 'active' );
+        }
+    }
+}
 `;
     var script = document.createElement( 'script' );
     script.textContent = toggle;

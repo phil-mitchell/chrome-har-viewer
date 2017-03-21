@@ -3,26 +3,27 @@ body {
     color: #333;
 }
 
-table.entries {
+table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     border-bottom: 2px solid #ddd;
     margin-bottom: 2px;
+    table-layout: fixed;
 }
 
-table.entries caption {
+table caption {
     text-align: left;
     font-size: 20px;
     color: #999;
     background-color: #eee;
 }
 
-table.entries caption:hover {
+table caption:hover {
     background-color: #ffff0a;
 }
 
-table.entries thead tr th {
+table thead tr th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
     padding: 5px;
@@ -31,31 +32,31 @@ table.entries thead tr th {
     text-align: left;
 }
 
-table.entries tfoot tr th {
+table tfoot tr th {
     font-size: 12px;
     text-align: left;
 }
 
-table.entries tfoot tr th.text-right {
+table tfoot tr th.text-right {
     text-align: right;
 }
 
-table.entries tr:hover {
+table tr:hover {
     background-color: #f5f5f5;
 }
 
-table.entries td {
+table td {
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     border-top: 1px solid #ddd;
     padding: 0;
     line-height: 1.5;
 }
 
-table.entries td.url {
-    width: 30%!important;
-    max-width: 30%!imporant;
+table.entries th.url {
+    width: 30%;
 }
 
 table.entries td.url i {
@@ -101,7 +102,7 @@ span.detail {
     color: lightgrey;
 }
 
-td.progress {
+th.progress {
     width: 50%;
 }
 
@@ -136,7 +137,6 @@ td.progress div {
 
 .progress-receive {
     background-color: blue;
-    border-right: 1px solid black;
 }
 
 dl.dl-horizontal {
@@ -182,6 +182,12 @@ div.entry-details-content {
     padding: 20px 10px 5px;
     border: 1px solid #ddd;
     border-top: 0;
+    white-space: normal;
+    overflow: auto;
+}
+
+div.response {
+    white-space: pre;
 }
 
 ul.entry-details-tabs {
